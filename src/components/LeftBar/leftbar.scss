@@ -1,0 +1,72 @@
+@import "../../style.scss";
+
+.leftBar{
+    @include themify($themes){
+    flex: 2;
+    max-width: 20rem;
+    position: sticky;
+    top: rem;
+    top: 2rem;
+    height: calc(100vh - 2rem);
+    overflow: scroll;
+    background-color: themed("bg");
+
+    @include mobile{
+        display: none;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .container{
+
+        .menu{
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            color: themed("textColor");
+
+            hr{
+                border: 0; 
+                width: 60%;
+                border-top: 1px solid themed("border");
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+
+                img{
+                    width: 2.5rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .item{
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                font-size: 1rem;
+                transition: ease-in-out .3s;
+                padding: .1rem .5rem;
+                
+                img{
+                    width: 2.5rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .item:hover{
+                transition: ease-in-out .3s;
+                background-color: themed("hoverColor");
+                border-radius: .4rem;
+            }
+        }
+    }
+    }
+}

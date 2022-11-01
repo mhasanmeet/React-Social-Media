@@ -1,0 +1,127 @@
+@import "../../style.scss";
+
+.rightBar{
+    @include themify($themes){
+    flex: 3;
+    max-width: 40rem;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 0px);
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: themed("bgSoft");
+
+    @include mobile{
+        display: none;
+    }
+
+    @include tablet{
+        display: none;
+    }
+
+    &::-webkit-scrollbar{
+        width: .6rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: themed("webKitScrollTrack"); 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: themed("webKitScrollThumb");
+        border-radius: 1rem;
+    }
+
+    .container{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: themed("bgSoft");
+
+        .item{
+            //box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: .8rem;
+            border-radius: .5rem;
+            border: 1px solid themed("border");
+            background-color: themed("bg");
+
+            span{
+                color: themed("textColor");
+                font-weight: 500;
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 1rem;
+
+                .userInfo{
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    position: relative;
+
+                    img{
+                        width: 2.5rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    span{
+                        font-size: 1rem;
+                        color: themed("textColor");
+                        font-weight: 400;
+                    }
+
+                    .activities__done{
+                        font-size: .8rem;
+                        color: themed("textColor");
+                        font-weight: 500;
+                    }
+
+                    .online{
+                        width: .8rem;
+                        height: .8rem;
+                        border-radius: 50%;
+                        background-color: limegreen;
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+
+                .buttons{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    button{
+                        border: none;
+                        padding: .4rem 1.5rem;
+                        font-size: .8rem;
+                        font-weight: 500;
+                        border: 1px solid;
+                        border-radius: .2rem;
+
+                        &:first-child{
+                            background-color: rgb(175, 255, 200);
+                        }
+
+                        &:last-child{
+                            background-color: rgb(255, 196, 175);
+                        }
+                    }
+                }
+
+                .activities__time{
+                    font-size: .8rem;
+                    color: themed("textColor");
+                    font-weight: 500;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    }
+}

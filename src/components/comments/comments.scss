@@ -1,0 +1,78 @@
+@import "../../style.scss";
+
+.comments{
+    @include themify($themes){
+    margin-top: 2rem;
+
+    .write__comment{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        img{
+            height: 2.4rem;
+            width:2.5rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid themed("border");
+        }
+
+        input{
+            width: 100%;
+            height: 2rem;
+            padding: .5rem;
+            border-radius: .5rem;
+            background: transparent;
+            border: 1px solid themed("border");
+
+        }
+
+        button{
+            width: 10rem;
+            height: 2.5rem;
+            border-radius: .5rem;
+            background: themed("bg");
+            color: themed("textColor");
+            border: 1px solid themed("border");
+            cursor: pointer;
+        }
+
+    }
+
+    .comment{
+        display: flex;
+        margin: 1rem 0;
+
+        img{
+            height: 2.4rem;
+            width:2.5rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid themed("border");
+        }
+
+        .info{
+            .comment__name{
+                font-size: .8rem;
+                font-weight: 500;
+            }
+
+            p{
+                margin-top: .5rem;
+                background-color: themed("bg");
+                padding: .4rem;
+                border-radius: .5rem;
+                font-size: .9rem;
+                line-height: 1.4;
+            }
+
+            .date{
+                font-size: .6rem;
+                margin-left: .5rem;
+            }
+        }
+    }
+    }
+}
