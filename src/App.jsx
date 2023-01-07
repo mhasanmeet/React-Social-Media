@@ -3,6 +3,7 @@ import Login from "./pages/login/Login"
 import Register from "./pages/register/Register"
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
@@ -11,8 +12,12 @@ import Feed from "./components/feed/Feed";
 import RightBar from "./components/rightbar/RightBar";
 import Profile from "./pages/profile/Profile";
 
+
 function App() {
 
+  const currentUser = true;
+
+  //Layout
   const Layout = () =>{
     return(
       <>
@@ -26,10 +31,23 @@ function App() {
     )
   }
 
+  //Route Protection
+  const ProtectedRoute = ({children}) => {
+    if(!currentUser){
+      return <Navigate to="/login"/>
+    }
+    return children
+  }
+
+  //Route Paths
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout/>,
+      element: (
+        <ProtectedRoute>
+          <Layout/>
+        </ProtectedRoute>
+      ),
       children: [
         {
           path: "/",
@@ -51,6 +69,7 @@ function App() {
     }
   ])
 
+  //Return Components
   return (
     <>
       <RouterProvider router={router}/>
