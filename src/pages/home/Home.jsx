@@ -1,13 +1,10 @@
-import Posts from "../../components/posts/Posts";
-import Stories from "../../components/stories/Stories";
-import "./home.scss";
+import "./home.scss"
 
-const Home = () => {
+function Home() {
   return (
-    <div className="home">
-      <Stories/>
-      <Posts/>
-    </div>
+    <>
+      Hello
+    </>
   )
 }
 

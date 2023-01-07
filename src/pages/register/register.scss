@@ -1,97 +1,97 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat";
-}
-
 .register{
     height: 100vh;
-    width: 100%;
-    background-color: bisque;
+    background-color: hsl(160, 100%, 75%);
     display: flex;
     align-items: center;
     justify-content: center;
-        
+
     .card{
         display: flex;
         flex-direction: row-reverse;
-        background-color: white;
         width: 50%;
+        background-color: white;
+        height: 60%;
         border-radius: 1rem;
-        min-height: 60vh;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
         overflow: hidden;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-        .card__left{
+        .left{
             flex: 1;
-            background: linear-gradient(rgba(96, 72, 44, 0.9), rgba(110, 106, 26, 0.8)), url("https://source.unsplash.com/pVt9j3iWtPM") center;
-            background-size: cover;
+            background: linear-gradient(hsla(160, 100%, 75%, 0.3), hsla(160, 53%, 43%, 0.4)), url("https://source.unsplash.com/Xwg01ogc56U");
             background-repeat: no-repeat;
-            padding: 4rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            color: white;
-
-            h1{
-                font-size: 5rem;
-            }
-
-            P{
-                font-size: .9rem;
-                line-height: 1.5rem;
-            }
-
-            span{
-                font-size: .8rem;
-            }
-
-            button{
-                border: none;
-                width: 60%;
-                padding: .6rem 2rem;
-                font-size: 1rem;
-                font-weight: 500;
-                border-radius: .5rem;
-                cursor: pointer;
-            }
-
-        }
-
-        .card__right{
-            flex: 1;
-            padding: 4rem;
-            // background: linear-gradient(rgba(68, 190, 149, 0.9), rgba(111, 234, 132, 0.8));
+            background-size: cover;
+            // filter: brightness(.8);
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
 
             h1{
-                margin-bottom: 2rem;
-                color: #555;
+                font-size: 4rem;
+                background: -webkit-linear-gradient(hsl(227, 67%, 50%), hsl(281, 99%, 40%));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            p{
+                color: white;
+                margin-top: 1rem;
+
+            }
+
+            span{
+                color: white;
+                margin-top: 1rem;
+            }
+
+            button{
+                margin-top: 1rem;
+                border: none;
+                width: fit-content;
+                padding: .4rem 2rem;
+                font-size: 1rem;
+                background-image: linear-gradient(to right, hsl(227, 67%, 50%), hsl(281, 99%, 40%));
+                border-radius: .5rem;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+        .right{
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1{
+                font-size: 2rem;
             }
 
             form{
+                margin-top: 2rem;
                 display: flex;
                 flex-direction: column;
-                gap: 2rem;
+                gap: 1rem;
 
                 input{
                     border: none;
-                    border-bottom: 1px solid lightgrey;
-                    padding: 1rem .5rem;
+                    border-bottom: 1px solid gray;
+                    padding: 1rem;
+                    font-size: 1rem;
+
                 }
 
                 button{
-                    border: none;
-                    width: 60%;
-                    padding: .6rem 2rem;
+                    margin-top: 2rem;
+                    width: fit-content;
+                    padding: .4rem 2rem;
                     font-size: 1rem;
-                    font-weight: 500;
+                    background-image: linear-gradient(to right, hsl(227, 67%, 50%), hsl(281, 99%, 40%));
                     border-radius: .5rem;
-                    background: linear-gradient(to right, rgba(241, 212, 46, 0.9), rgba(229, 163, 83, 0.8));
-                    color: #555;
+                    color: white;
                     cursor: pointer;
+                    border: none;
                 }
             }
         }
