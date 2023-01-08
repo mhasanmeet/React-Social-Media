@@ -5,10 +5,11 @@
 * [Sass Package](https://www.npmjs.com/package/sass)
 * [React Router](https://reactrouter.com/en/main)
 * Protected Route
-* Navbar, Sidebar, Feed, Rightbar
+* Login Page, Registration Page, Navbar, Sidebar, Feed, Rightbar, Stories & Posts
 * DarkMode using sass functionality
+* Dark Mode & Authentication with React context
 
-## dark mode sass function
+## Dark mode scss function
 
 ```scss
 @mixin themify($themes) {
@@ -68,7 +69,6 @@ const {currentUser} = useContext(AuthContext)
 ```
 
 ```js
-    <img src={currentUser.profilePic} alt="avatar" />
-    <span>{currentUser.name}</span>
-```
-
+<img src={currentUser.profilePic} alt="avatar" />
+<span>{currentUser.name}</span>
+```1.43.28

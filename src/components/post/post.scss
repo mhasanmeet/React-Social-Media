@@ -1,0 +1,62 @@
+@import "../../darkTheme.scss";
+
+.post{
+    @include themify($themes){
+        .container{
+            width: 45rem;
+            margin-inline: auto;
+            padding: 2rem;
+            background: themed("bg");
+            color: themed("textColor");
+            border-radius: 1rem;
+
+            .user{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .userInfo{
+                    display: flex;
+                    align-items: center;
+
+                    img{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 1px solid rgb(62, 18, 77);
+                    }
+
+                    .details{
+                        display: flex;
+                        flex-direction: column;
+                        
+                        span{
+                            margin-left: .5rem;
+                        }
+
+                        .time{
+                            font-size: .8rem;
+                        }
+                    }
+                }
+            }
+
+            .postContent{
+                margin-top: 1rem;
+                
+                p{
+                    font-size: 1rem;
+                }
+
+                img{
+                    margin-top: 1.5rem;
+                    width: 100%;
+                    border-radius: .2rem;
+                    height: 20rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
