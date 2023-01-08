@@ -1,0 +1,121 @@
+@import "../../darkTheme.scss";
+
+.rightbar{
+    @include themify($themes){
+        flex: 3;
+        position: sticky;
+        top: 70px;
+        height: calc(100vh - 70px);
+        overflow: scroll;
+        background: themed("bgSoft");
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        .container{
+            padding: 1rem;
+
+            .item{
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                padding: 1rem;
+                border-radius: .5rem;
+                margin-bottom: 1.5rem;
+                background: themed("bg");
+                color: themed("textColor");
+
+                p{
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+
+                .user{
+                    margin-top: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .userInfo{
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+
+                        img{
+                            width: 2rem;
+                            border-radius: 50%;
+                            object-fit: contain;
+                        }
+
+                        .activityUser{
+                            display: flex;
+                            font-size: .8rem;
+                            align-items: center;
+                            gap: .5rem;
+
+                            p{
+                                font-size: 1rem;
+                                font-weight: 400;
+                            }
+                        }
+
+                        .onlineUser{
+                            position: relative;
+
+                            .active{
+                                width: .5rem;
+                                height: .5rem;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                border-radius: 50%;
+                            }
+
+                            .online{
+                                background-color: rgb(0, 170, 0);
+                                border: 1px solid rgb(0, 170, 0); 
+                            }
+
+                            .wasOnline{
+                                background-color: rgb(221, 255, 221);
+                                border: 1px solid rgb(0, 170, 0); 
+                            }
+
+                            .offline{
+                                background-color: rgb(171, 171, 171);
+                                border: 1px solid rgb(171, 171, 171); 
+                            }
+                        }
+                    }
+
+                    .activityTime{
+                        font-size: .8rem;
+                    }
+
+                    .buttons{
+                        display: flex;
+                        gap: 1rem;
+
+                        button{
+                            border: none;
+                            padding: .4rem 1rem;
+
+                            &:first-child{
+                                background-color: hsl(96, 99%, 35%);
+                                color: white;
+                                border-radius: .2rem;
+                                font-size: .9rem;
+                            }
+
+                            &:last-child{
+                                background-color: hsl(0, 100%, 42%);
+                                color: white;
+                                border-radius: .2rem;
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import "../../darkTheme.scss";
+
+.feed{
+    @include themify($themes){
+        background: themed("bgSoft");
+        color: themed("textColor");
+        padding: 2rem;
+    }
+}

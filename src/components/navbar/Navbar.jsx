@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
-import { BsMoonFill, BsSearch, BsBell } from "react-icons/bs";
+import { BsMoonFill, BsSearch, BsBell, BsSun } from "react-icons/bs";
 import { ImMenu } from "react-icons/im";
 import { RxAvatar } from "react-icons/rx";
 import { HiOutlineMail } from "react-icons/hi";
 import "./navbar.scss"
+import { useContext } from "react"; //get useContext api from React
+import { DarkModeContext } from "../../context/darkModeContext"; //get our Dark mode functionality from darkModeContext
+import { AuthContext } from "../../context/authContext";
 
 function NavBar() {
+  //dark Mode context
+  const {toggle, darkMode} = useContext(DarkModeContext)
+  //Auth context
+  const {currentUser} = useContext(AuthContext)
+
   return (
     <div className="navbar">
       <div className="left">
@@ -14,7 +22,7 @@ function NavBar() {
           <span>Social Media</span>
         </Link>
         <AiOutlineHome className="icon"/>
-        <BsMoonFill className="icon"/>
+        {darkMode ? <BsSun className="icon" onClick={toggle}/> : <BsMoonFill className="icon" onClick={toggle}/> }
         <ImMenu className="icon"/>
 
         <div className="search">
@@ -29,8 +37,8 @@ function NavBar() {
         <BsBell className="icon"/>
 
         <div className="user">
-          <img src="https://source.unsplash.com/ZHvM3XIOHoE" alt="avatar" />
-          <span>Mahmudul Hasan</span>
+          <img src={currentUser.profilePic} alt="avatar" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

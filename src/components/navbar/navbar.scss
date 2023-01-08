@@ -1,66 +1,78 @@
+@import "../../darkTheme.scss";
+
 .navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    height: 50px;
-    border-bottom: 1px solid lightgray;
-
-    .icon{
-        font-size: 1.4rem;
-    }
-
-    .left{
+    @include themify($themes){
         display: flex;
         align-items: center;
-        gap: 2rem;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 50px;
+        border-bottom: 1px solid themed("textColorsoft");
+        position: sticky;
+        top: 0; 
+        z-index: 1;
+        background-color: themed("bg");
+        color: themed("textColor");
 
-        span{
-            font-size: 2rem;
-            font-weight: 500;
-            color: hsl(180, 100%, 22%);
+        .icon{
+            font-size: 1.4rem;
+            cursor: pointer;
         }
 
-        .search{
+        .left{
             display: flex;
             align-items: center;
-            gap: 1rem; 
-            border: 1px solid lightgray;
-            padding: .2rem 1.5rem;
-            border-radius: .5rem;
+            gap: 2rem;
 
-            input{
-                border: none;
-                width: 25rem;
-                font-size: 1rem;
-                height: 2rem;
+            span{
+                font-size: 2rem;
+                font-weight: 500;
+                color: hsl(180, 100%, 22%);
+            }
 
-                &:focus{
-                    outline: none;
+            .search{
+                display: flex;
+                align-items: center;
+                gap: 1rem; 
+                border: 1px solid themed("border");
+                padding: .2rem 1.5rem;
+                border-radius: .5rem;
+
+                input{
+                    border: none;
+                    width: 25rem;
+                    font-size: 1rem;
+                    height: 2rem;
+                    background: transparent;
+                    color: themed(textColor);
+
+                    &:focus{
+                        outline: none;
+                    }
                 }
             }
         }
-    }
 
-    .right{
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-
-        .user{
+        .right{
             display: flex;
             align-items: center;
-            margin-left: 1rem;
-            gap: .5rem;
+            gap: 1.5rem;
 
-            img{
-                width: 2rem;
-                border-radius: 50%;
-            }
+            .user{
+                display: flex;
+                align-items: center;
+                margin-left: 1rem;
+                gap: .5rem;
 
-            span{
-                font-size: 1rem;
-                font-weight: 500;
+                img{
+                    width: 2rem;
+                    border-radius: 50%;
+                }
+
+                span{
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
             }
         }
     }

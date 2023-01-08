@@ -11,23 +11,32 @@ import LeftBar from "./components/leftbar/LeftBar";
 import Feed from "./components/feed/Feed";
 import RightBar from "./components/rightbar/RightBar";
 import Profile from "./pages/profile/Profile";
+import "./darkTheme.scss";
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 
 
 function App() {
+  //Authentication Context
+  const {currentUser} = useContext(AuthContext);
 
-  const currentUser = true;
+  //dark mode context
+  const {darkMode} = useContext(DarkModeContext)
 
   //Layout
   const Layout = () =>{
     return(
-      <>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <NavBar/>
-        <div>
+        <div style={{display: "flex"}}>
           <LeftBar/>
-          <Feed/>
+            <div style={{flex: 6}}>
+              <Feed/>
+            </div>
           <RightBar/>
         </div>
-      </>
+      </div>
     )
   }
 

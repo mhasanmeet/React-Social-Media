@@ -1,8 +1,11 @@
 import React from 'react'
+import "./feed.scss";
 
 function Feed() {
   return (
-    <div>Feed</div>
+    <div className="feed">
+      Hello
+    </div>
   )
 }
 
