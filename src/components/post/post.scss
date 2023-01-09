@@ -1,4 +1,5 @@
 @import "../../darkTheme.scss";
+@import "../../responsive.scss";
 
 .post{
     @include themify($themes){
@@ -9,6 +10,18 @@
             background: themed("bg");
             color: themed("textColor");
             border-radius: 1rem;
+
+            @include mobile{
+                width: 24rem;
+            }
+
+            @include tablet{
+                width: 35rem;
+            }
+
+            .icon{
+                cursor: pointer;
+            }
 
             .user{
                 display: flex;
@@ -47,6 +60,10 @@
                 
                 p{
                     font-size: 1rem;
+                    
+                    @include mobile{
+                        font-size: .9rem;
+                    }
                 }
 
                 img{
@@ -55,6 +72,26 @@
                     border-radius: .2rem;
                     height: 20rem;
                     object-fit: cover;
+
+                    @include mobile{
+                        height: 10rem;
+                    }
+                }
+            }
+
+            .reacts{
+                margin-top: 1rem;
+                display: flex;
+                justify-content: space-between;
+
+                .item{
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    .icon{
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }

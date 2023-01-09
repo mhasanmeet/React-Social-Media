@@ -13,7 +13,8 @@ export const AuthContextProvider = ({children}) =>{
         setCurrentUser({
             id: 1,
             name: "Mahmudul Hasan",
-            profilePic: "https://source.unsplash.com/iEEBWgY_6lA"
+            profilePic: "https://source.unsplash.com/iEEBWgY_6lA",
+            coverPic: "https://source.unsplash.com/2FdIvx7sy3U"
         })
     }
 

@@ -4,8 +4,8 @@
 * Google Fonts: Roboto
 * [Sass Package](https://www.npmjs.com/package/sass)
 * [React Router](https://reactrouter.com/en/main)
-* Protected Route
-* Login Page, Registration Page, Navbar, Sidebar, Feed, Rightbar, Stories & Posts
+* Protected Route without login credentials. Initially we save and get credentials from local storage application by state. When we click login button from Login page it will save a static credential to local storage and give us allow to go home page.  
+* Login Page, Registration Page, Navbar, Sidebar, Feed, Rightbar, Stories, Posts, post, comments & section profile 
 * DarkMode using sass functionality
 * Dark Mode & Authentication with React context
 
@@ -71,4 +71,33 @@ const {currentUser} = useContext(AuthContext)
 ```js
 <img src={currentUser.profilePic} alt="avatar" />
 <span>{currentUser.name}</span>
-```1.43.28
+```
+
+## SASS Media Queries
+
+Fully responsive (mobile, tablet & computer)
+
+* Template
+
+```scss
+@mixin mobile{
+    @media (max-width: 480px){
+        @content;
+    }
+}
+```
+
+* Then use the template
+
+```scss
+import "../responsive file.scss"
+
+@include mobile{
+    ....
+    scss
+    ....
+}
+```
+## images
+
+![image](./social-media.png)

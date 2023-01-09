@@ -1,0 +1,73 @@
+@import "../../darkTheme.scss";
+@import "../../responsive.scss";
+
+.comments{
+    @include themify($themes){
+        margin-top: 2rem;
+        background: themed("bg");
+        color: themed("textColor");
+
+        .comments{
+            display: flex;
+            margin-top: 1.5rem;
+            
+            img{
+                width: 2rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .comment{
+                margin-inline: auto;
+                width: 75%;
+
+                p{
+                    margin-top: .5rem;
+                    line-height: 1.5;
+                    font-size: .8rem;
+
+                    @include mobile{
+                        font-size: .8rem;
+                    }
+                }
+            }
+
+            .time{
+                font-size: .8rem;
+                @include mobile{
+                    font-size: .6rem;
+                }
+            }
+        }
+
+        .write{
+            display: flex;
+            gap: 1.5rem;
+
+            img{
+                width: 2rem;
+                height: 1.8rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            textarea{
+                padding: .5rem;
+                border-radius: .5rem;
+                font-size: .8rem;
+                background: transparent;
+            }
+
+            button{
+                border: none;
+                width: 4rem;
+                height: 2rem;
+                border-radius: .5rem;
+                color: themed("btnColor");
+                background: themed("btnBg");
+                cursor: pointer;
+            }
+        }
+    }
+}

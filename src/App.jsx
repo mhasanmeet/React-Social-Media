@@ -1,15 +1,15 @@
-import Home from "./pages/home/Home"
-import Login from "./pages/login/Login"
-import Register from "./pages/register/Register"
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 import {
   createBrowserRouter,
   Navigate,
+  Outlet,
   RouterProvider,
 } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import LeftBar from "./components/leftbar/LeftBar";
-import Feed from "./components/feed/Feed";
 import RightBar from "./components/rightbar/RightBar";
+import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./darkTheme.scss";
 import { useContext } from "react";
@@ -32,7 +32,8 @@ function App() {
         <div style={{display: "flex"}}>
           <LeftBar/>
             <div style={{flex: 6}}>
-              <Feed/>
+              {/* Switch Between Home and Profile */}
+              <Outlet/>
             </div>
           <RightBar/>
         </div>
@@ -51,6 +52,7 @@ function App() {
   //Route Paths
   const router = createBrowserRouter([
     {
+      // protected routes
       path: "/",
       element: (
         <ProtectedRoute>
@@ -68,6 +70,8 @@ function App() {
         }
       ]
     },
+
+    //Public routes
     {
       path: "/login",
       element: <Login/>

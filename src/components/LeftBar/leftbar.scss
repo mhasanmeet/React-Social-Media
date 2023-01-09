@@ -1,4 +1,5 @@
 @import "../../darkTheme.scss";
+@import "../../responsive.scss";
 
 .leftbar{
     @include themify($themes){
@@ -11,6 +12,14 @@
 
         &::-webkit-scrollbar{
             display: none;
+        }
+
+        @include mobile{
+            display: none;
+        }
+
+        @include tablet{
+            flex: 1.5;
         }
 
         .container{
@@ -44,6 +53,10 @@
 
                     span{
                         font-weight: 500;
+
+                        @include tablet{
+                            font-size: .9rem;
+                        }
                     }
                 }
 
@@ -58,11 +71,19 @@
 
                     span{
                         font-size: 1rem;
+                        
+                        @include tablet{
+                            font-size: .8rem;
+                        }
                     }
                 }
 
                 .title{
                     font-weight: 500;
+
+                    @include tablet{
+                        font-size: .9rem;
+                    }
                 }
             }
         }

@@ -1,0 +1,125 @@
+@import "../../darkTheme.scss";
+@import "../../responsive.scss";
+
+.profile{
+    @include themify($themes){
+        background: themed("bgSoft");
+
+        .images{
+            background: themed("bgSoft");
+            color: themed("textColor");
+            
+            .cover{
+                width: 100%;
+                height: 15rem;
+                object-fit: cover;
+
+                @include mobile{
+                    height: 10rem;
+                }
+            } 
+        }
+
+        .profileContainer{
+            width: 80%;
+            margin-inline: auto;
+            color: themed("textColor");
+            display: flex;
+            align-items: center;
+
+            @include mobile{
+                flex-direction: column;
+            }
+
+           .profilePic{
+                .profile{
+                    width: 10rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-top: -5rem; 
+                    
+                    @include mobile{
+                        width: 8rem;
+                        margin-top: -4rem; 
+                    }
+                }
+           }
+
+            .userInfo{
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+                margin-left: 1rem;
+                margin-top: 1rem;
+
+                @include mobile{
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: .5rem;
+                }
+
+                .left{
+                    @include mobile{
+                        text-align: center;
+                    }
+
+                    .name{
+                        font-size: 2rem;
+                        font-weight: 500;
+
+                        @include mobile{
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .followSection{
+                        display: flex;
+                        align-items: center;
+                        margin-top: .5rem;
+
+                        @include mobile{
+                            text-align: center;
+                            font-size: .8rem;
+                        }
+                    }
+                }
+
+                .right{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    margin-bottom: 2rem;
+
+                    @include mobile{
+                        margin-top: 1.5rem;
+                        text-align: center;
+                    }
+
+                    span{
+                        font-size: 1.5rem;
+
+                        @include mobile{
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    .links{
+                        display: flex;
+                        font-size: 1.5rem;
+                        gap: 1rem;
+
+                        @include mobile{
+                            justify-content: center;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .postSection{
+            padding-bottom: 4rem;
+        }
+    }
+}

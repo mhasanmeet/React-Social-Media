@@ -1,0 +1,18 @@
+@import "../../darkTheme.scss";
+@import "../../responsive.scss";
+
+.home{
+    @include themify($themes){
+        background: themed("bgSoft");
+        color: themed("textColor");
+        padding: 2rem;
+
+        @include mobile{
+            padding: 1rem;
+        }
+
+        @include tablet{
+            width: 44rem;
+        }
+    }
+}

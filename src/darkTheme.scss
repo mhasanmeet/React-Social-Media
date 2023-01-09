@@ -5,7 +5,9 @@ $themes: (
         logo: darkblue,
         bgSoft: #f6f3f3,
         textColorsoft: #555,
-        border: lightgray
+        border: lightgray,
+        btnBg: #555,
+        btnColor: white
     ),
 
     dark: (
@@ -14,7 +16,9 @@ $themes: (
         logo: white,
         bgSoft: #333,
         textColorsoft: lightgray,
-        border: #444
+        border: #444,
+        btnBg: white,
+        btnColor: #555
     )
 );
 
