@@ -2,6 +2,8 @@
 import db from '../connectmysql.js'
 // import encryption library
 import bcrypt from 'bcrypt'
+// Import jsonwebtoken
+import jwt from 'jsonwebtoken'
 
 // User register authentication controller
 export const register = (req, res) => {
@@ -41,14 +43,41 @@ export const register = (req, res) => {
 
 
 
-
+// User Login authentication controller
 export const login = (req, res) => {
+    const querystring = "SELECT * FROM users WHERE username = ?"
 
+    db.query(querystring, [req.body.username], (err, data)=>{
+        // if there is any error happen, show server error 500
+        if(err) return res.status(500).json(err)
+        // if the username do not exist, show error 404
+        if(data.length === 0) return res.status(404).json('user not found!')
+
+        // For check user password, get user data, decrypt password, compare password of specific and first data of the array  
+        const checkPassword = bcrypt.compareSync(req.body.password, data[0].password)
+
+        // If password does not match, then show error 400
+        if (!checkPassword) return res.status(400).json('wrong password or username')
+
+        // json web token 
+        const token = jwt.sign({id: data[0].id}, "secretkey")
+
+        // separate password and others data of the user with destructing
+        const {password, ...others} = data[0]
+
+        // Get access token with cookie and response user data (others data, except password)
+        res.cookie("accessToken", token, {
+            httpOnly: true,
+        }).status(200).json(others)
+    })
 }
 
 
 
-
+// User logout authentication controller
 export const logout = (req, res) => {
-
+    res.clearCookie("accessToken", {
+        secure: true,
+        sameSite: "none"
+    }).status(200).json("user has been logged out")
 }

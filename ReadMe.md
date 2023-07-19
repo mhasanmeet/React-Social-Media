@@ -1,5 +1,7 @@
 ## Full Stack Social Media App
 
+![Social](./client/social-media.png)
+
 ## Frontend 
 
 * vite tooling
@@ -7,6 +9,7 @@
 * scss, scss mixins
 * Context
 * React router
+* [axios](https://axios-http.com/docs/intro) for API request 
 
 > More details [Frontend details](./client/README.md) 
 
@@ -20,6 +23,8 @@
 ## Tools 
 
 * Postman
+* phpmyadmin
+* Laragon
 
 ## Resources 
 

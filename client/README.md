@@ -101,3 +101,9 @@ import "../responsive file.scss"
 ## images
 
 ![image](./social-media.png)
+
+## API request
+
+get axios pack
+
+`npm i axios `

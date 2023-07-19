@@ -23,6 +23,14 @@ Tech stack
 
 ## [Project Database table structure](./dbtable.md) 
 
-## Command
+## Install these pack
 
-* `npm i express mysql nodemon`, `npm init -y`, `npm i bcrypt`
+* `npm i express mysql nodemon`, `npm init -y`, `npm i bcrypt`, `npm i jsonwebtoken`, `npm i cookie-parser`, `npm i cors`
+
+## Tools we use
+
+* Postman
+![postman](../img/postman.png)
+* phpmyadmin
+* Laragon
+
