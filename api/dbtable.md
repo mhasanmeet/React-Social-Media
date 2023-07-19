@@ -8,7 +8,8 @@
     * email `varchar(40)` [not null]
     * password `varchar(100)` [not null]
     * name `varchar(30)` [not null]
-    * coverPic `varchar(100)` [null]
+    * coverPic `varchar(300)` [null]
+    * profilePic `varchar(300)` [null]
     * city `varchar(30)` [null]
     * website `varchar(30)` [null]
 

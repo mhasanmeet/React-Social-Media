@@ -1,14 +1,44 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { useContext, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/authContext"
 import "./login.scss"
 
 function Login() {
+     // user inputs state
+     const [inputs, setInputs] = useState({
+        username: "",
+        password: "",
+    })
+
+    // navigate/page redirect using react router
+    const navigate = useNavigate()
+
+    // error state
+    const [err, setErr] = useState(null)
+
+    // handle user inputs
+    const handleChange = (e) =>{
+        setInputs((prev) => ({...prev, [e.target.name]: e.target.value}))
+    }
+
     const { login } = useContext(AuthContext)
 
-    const handleLogin = () =>{
-        login()
+    const handleLogin = async (e) =>{
+        // on click don't load webpage
+        e.preventDefault();
+
+        // axios 
+        try{
+           await login(inputs)
+           navigate("/") //if user data correct redirect to homepage
+        }
+        catch(err){
+            setErr(err.response.data)
+        }
     }
+
+    // console log err
+    console.log(err)
 
   return (
     <div className="login">
@@ -27,8 +57,9 @@ function Login() {
             <div className="right">
                 <h1>Login</h1>
                 <form action="#">
-                    <input type="text" placeholder="Username"/>
-                    <input type="text" placeholder="Password"/>
+                    <input type="text" placeholder="Username" name="username" onChange={handleChange}/>
+                    <input type="text" placeholder="Password" name="password" onChange={handleChange}/>
+                    {err && err} {/* if user exist then show the response */} 
                     <button type="submit" onClick={handleLogin}>Login</button>
                 </form>
             </div>
