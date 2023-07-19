@@ -22,3 +22,7 @@ Tech stack
 * Super Key
 
 ## [Project Database table structure](./dbtable.md) 
+
+## Command
+
+* `npm i express mysql nodemon`, `npm init -y`, `npm i bcrypt`

@@ -17,12 +17,12 @@
     * desc `varchar(300)` [null]
     * img `varchar(300)` [null]
     * puid `int` [foreign key: posts.puid > users.uid, not null, note: 'puid is for post user id, on update cascade on delete cascade'] ![Image](../img/foreign_key_posts.png)
-    * createdat `datetime`
+    * createdat `datetime` [not null]
 
 * comments
     * cid `int` [primary key, unique, not null, increment, note: 'cid is for comment id']
     * comment `varchar(300)` [not null]
-    * createdat `datetime`
+    * createdat `datetime` [not null]
     * cuid `int` [foreign key: comment.cuid > users.uid, not null, note: 'cuid is for comment user id, on update cascade on delete cascade']
     * postid `int` [foreign key: comments.postid > posts.pid, not null, not null, on update cascade on delete cascade']
 
@@ -38,5 +38,5 @@
 
 * likes 
     * lid `int` [primary key, unique, not null, increment, note: 'lid is likes id']
-    * luid `int` [foreign key: likes.luid > posts.puid, not null, note: 'luid is likes user id, on update cascade on delete cascade']
-    * likedpostid `int` [foreign key: likes.likedpostid > users.uid, not null, note: on update cascade on delete cascade']
+    * luid `int` [foreign key: likes.luid > users.uid, not null, note: 'luid is likes user id, on update cascade on delete cascade']
+    * likedpostid `int` [foreign key: likes.likedpostid > posts.puid, not null, note: on update cascade on delete cascade']
