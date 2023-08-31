@@ -10,6 +10,7 @@
 * Context
 * React router
 * [axios](https://axios-http.com/docs/intro) for API request 
+* Tanstack query
 
 > More details [Frontend details](./client/README.md) 
 
@@ -29,3 +30,6 @@
 ## Resources 
 
 * [React Node.js MySQL Social Media App Tutorial | Full Stack Social Network App](https://youtu.be/1EuNnZEp2sQ)
+
+
+1:02:48

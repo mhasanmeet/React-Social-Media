@@ -15,6 +15,8 @@ import "./darkTheme.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
+// import React query
+import {QueryClient, QueryClientProvider} from 'react-query'
 
 
 function App() {
@@ -24,20 +26,25 @@ function App() {
   //dark mode context
   const {darkMode} = useContext(DarkModeContext)
 
+  // get query client
+  const queryClient = new QueryClient()
+
   //Layout
   const Layout = () =>{
     return(
-      <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <NavBar/>
-        <div style={{display: "flex"}}>
-          <LeftBar/>
-            <div style={{flex: 6}}>
-              {/* Switch Between Home and Profile */}
-              <Outlet/>
-            </div>
-          <RightBar/>
+      <QueryClientProvider client={queryClient}>
+        <div className={`theme-${darkMode ? "dark" : "light"}`}>
+          <NavBar/>
+          <div style={{display: "flex"}}>
+            <LeftBar/>
+              <div style={{flex: 6}}>
+                {/* Switch Between Home and Profile */}
+                <Outlet/>
+              </div>
+            <RightBar/>
+          </div>
         </div>
-      </div>
+      </QueryClientProvider>
     )
   }
 
